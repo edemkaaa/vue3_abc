@@ -35,6 +35,12 @@ shom: function(){
     let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
     return days[date -1];
   },
+  shot: function(str){
+  alert(str*str);
+  },
+  shot1: function(str1){
+    alert(str1*str1)
+  }
 }
 }
 let today = new Date();
@@ -44,6 +50,7 @@ let today = new Date();
 <div> 
   <a href="page.html">page</a>
     <p> Привет, меня зовут {{name}} я из группы {{group}} а моя фамилия {{ surname }} !</p>
+    <img height="250" width="800" v-bind:src="attr">
     <p class="sc">Сумма {{num1+num2+num3}}.</p>
     <p class="sc">Сумма {{obj.x + obj.y +obj.z}}.</p>
     <button class="button button1" @click="show">Узнать дату кликом</button> <br> 
@@ -51,7 +58,8 @@ let today = new Date();
     <button class="button" @mouseenter="shom">Узнать день недели навестить</button>
     <button class="button" @click="shom">Узнать день недели кликов</button>
 {{ dayOfWeekDigit }}
- <img v-bind:src="attr">
+    <button class="button" @click="shot(2)">Выведет квадрат числа 2</button>
+    <button class="button" @click="shot1(3)">Выведет квадрат числа 3</button>
  </div>
 </template>
 
@@ -62,15 +70,15 @@ p {
   color: rgb(104, 62, 62);
   }
   .button {
-background-color: #fffc41; /* yellow */
-border: none;
+background-color: #efed73; /* yellow */
+border-radius: 1cm;
 color: black;
 padding: 15px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 4px 2px;
-cursor: pointer;
+text-align-last: justify;
+text-decoration: double;
+display: flexbox;
+font-size: 10px;
+margin: 5px 2px;
+cursor: cell;
 }
   </style>
