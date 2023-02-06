@@ -4,7 +4,8 @@
 	data() {
 		return {
 		name: 'Edem',
-		surname: 'Asanov',
+    surname: 'Asanov',
+		group: 'I-1-21',
 		}
 	}
 }
@@ -12,7 +13,6 @@
 
 <template>
 <div> 
-    <h1> Привет, меня зовут {{name}} я учусь в группе {{group}} </h1>
-    <p> Введите корректное название :(</p>
+    <h1> Привет, меня зовут {{name}} я из группы {{group}} а моя фамилия {{ surname }} !</h1>
   </div>
 </template>
