@@ -20,6 +20,9 @@
 methods: {
 show: function() {
 alert(today);
+},
+slozheniye: function() {
+alert(this.num1 + this.num2)
 }
 }
 }
