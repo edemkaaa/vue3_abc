@@ -15,6 +15,7 @@
     arr1: ['x', 'y', 'z'], 
     arr2: [1, 2, 3],
     obj: {x: 5, y: 10, z: 15},
+    date: '6'
 	}
 },
 methods: {
@@ -23,14 +24,23 @@ alert(today);
 },
 slozheniye: function() {
 alert(this.num1 + this.num2)
-}
+},
+shom: function(){
+    let date = this.dayOfWeek(this.date);
+    // const dayOfWeekDigit = new Date().getDay();
+    // let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+    alert(date);
+  },
+  dayOfWeek: function(date){
+    let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+    return days[date -1];
+  },
 }
 }
 let today = new Date();
 </script>
 
 <template>
-  <button v-on:click="show">text</button>
 <div> 
   <a href="page.html">page</a>
     <p> Привет, меня зовут {{name}} я из группы {{group}} а моя фамилия {{ surname }} !</p>
@@ -38,6 +48,9 @@ let today = new Date();
     <p class="sc">Сумма {{obj.x + obj.y +obj.z}}.</p>
     <button class="button button1" @click="show">Узнать дату кликом</button> <br> 
     <button class="button button2" @mouseenter="show"> Узнать дату навестись</button> 
+    <button class="button" @mouseenter="shom">Узнать день недели навестить</button>
+    <button class="button" @click="shom">Узнать день недели кликов</button>
+{{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
 </template>
@@ -48,4 +61,16 @@ p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(104, 62, 62);
   }
+  .button {
+background-color: #fffc41; /* yellow */
+border: none;
+color: black;
+padding: 15px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
   </style>
