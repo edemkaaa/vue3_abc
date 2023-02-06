@@ -27,12 +27,14 @@ let today = new Date();
 </script>
 
 <template>
-  {{ show() }}
+  <button v-on:click="show">text</button>
 <div> 
   <a href="page.html">page</a>
     <p> Привет, меня зовут {{name}} я из группы {{group}} а моя фамилия {{ surname }} !</p>
     <p class="sc">Сумма {{num1+num2+num3}}.</p>
     <p class="sc">Сумма {{obj.x + obj.y +obj.z}}.</p>
+    <button class="button button1" @click="show">Узнать дату кликом</button> <br> 
+    <button class="button button2" @mouseenter="show"> Узнать дату навестись</button> 
  <img v-bind:src="attr">
  </div>
 </template>
