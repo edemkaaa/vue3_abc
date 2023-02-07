@@ -7,6 +7,7 @@
     surname: 'Asanov',
     attr: 'hi.png',
     text: 'page',
+    text1: 'edddem',
 		href: 'page.html',
     num: 5,
     num1: 1,
@@ -35,12 +36,12 @@ shom: function(){
     let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
     return days[date -1];
   },
-  shot: function(str){
-  alert(str*str);
+  change: function(){
+		this.text1 = 'edem';
+	},
+  change2: function(){
+    this.text1 = 'asanov'
   },
-  shot1: function(str1){
-    alert(str1*str1)
-  }
 }
 }
 let today = new Date();
@@ -50,16 +51,18 @@ let today = new Date();
 <div> 
   <a href="page.html">page</a>
     <p> Привет, меня зовут {{name}} я из группы {{group}} а моя фамилия {{ surname }} !</p>
-    <img height="250" width="800" v-bind:src="attr">
     <p class="sc">Сумма {{num1+num2+num3}}.</p>
     <p class="sc">Сумма {{obj.x + obj.y +obj.z}}.</p>
+    <p> {{ text1 }} </p>
+    <button @click="change">text</button>
     <button class="button button1" @click="show">Узнать дату кликом</button> <br> 
     <button class="button button2" @mouseenter="show"> Узнать дату навестись</button> 
     <button class="button" @mouseenter="shom">Узнать день недели навестить</button>
     <button class="button" @click="shom">Узнать день недели кликов</button>
+    <button @click="change">edem</button>
+    <button @click="change2">asanov</button>
 {{ dayOfWeekDigit }}
-    <button class="button" @click="shot(2)">Выведет квадрат числа 2</button>
-    <button class="button" @click="shot1(3)">Выведет квадрат числа 3</button>
+ <img v-bind:src="attr">
  </div>
 </template>
 
@@ -70,15 +73,15 @@ p {
   color: rgb(104, 62, 62);
   }
   .button {
-background-color: #efed73; /* yellow */
-border-radius: 1cm;
+background-color: #fffc41; /* yellow */
+border: none;
 color: black;
 padding: 15px;
-text-align-last: justify;
-text-decoration: double;
-display: flexbox;
-font-size: 10px;
-margin: 5px 2px;
-cursor: cell;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
 }
   </style>
