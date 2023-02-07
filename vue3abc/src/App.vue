@@ -19,6 +19,8 @@
     date: '6',
     cost: '1550',
     amount: '90',
+    visible: true,
+    visible1: false,
 	}
 },
 computed: {
@@ -79,6 +81,8 @@ let today = new Date();
     <button @click="change3">Меняем значение cost на 50</button>
     <a class="inline-link-1" href="https://github.com/edemkaaa" onclick="event.preventDefault()">Не сработает по клику</a>
     <a @click.once="shor">Сработает один раз</a>
+    <p v-if="visible">Показан</p>
+    <p v-if="visible1">Не показан</p>
 {{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
