@@ -39,6 +39,9 @@ shom: function(){
     // let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
     alert(date);
   },
+  shor: function(){
+    alert(new Date().toLocaleDateString());
+},
   dayOfWeek: function(date){
     let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
     return days[date -1];
@@ -74,6 +77,8 @@ let today = new Date();
     <button @click="change">edem</button>
     <button @click="change2">asanov</button>
     <button @click="change3">Меняем значение cost на 50</button>
+    <a class="inline-link-1" href="https://github.com/edemkaaa" onclick="event.preventDefault()">Не сработает по клику</a>
+    <a @click.once="shor">Сработает один раз</a>
 {{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
