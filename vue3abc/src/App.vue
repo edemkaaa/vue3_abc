@@ -21,6 +21,8 @@
     amount: '90',
     visible: true,
     visible1: false,
+    hidden: true,
+    hidden1: false,
 	}
 },
 computed: {
@@ -83,6 +85,8 @@ let today = new Date();
     <a @click.once="shor">Сработает один раз</a>
     <p v-if="visible">Показан</p>
     <p v-if="visible1">Не показан</p>
+    <p v-if="hidden">Edem</p>
+    <p v-if="!hidden1">Asanov</p>
 {{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
