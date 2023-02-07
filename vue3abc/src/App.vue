@@ -16,7 +16,14 @@
     arr1: ['x', 'y', 'z'], 
     arr2: [1, 2, 3],
     obj: {x: 5, y: 10, z: 15},
-    date: '6'
+    date: '6',
+    cost: '1550',
+    amount: '90',
+	}
+},
+computed: {
+	price: function() {
+		return this.cost *  this.amount;
 	}
 },
 methods: {
@@ -42,6 +49,9 @@ shom: function(){
   change2: function(){
     this.text1 = 'asanov'
   },
+  change3: function(){
+    this.cost = '50'
+  },
 }
 }
 let today = new Date();
@@ -54,13 +64,16 @@ let today = new Date();
     <p class="sc">Сумма {{num1+num2+num3}}.</p>
     <p class="sc">Сумма {{obj.x + obj.y +obj.z}}.</p>
     <p> {{ text1 }} </p>
-    <button @click="change">text</button>
+    <p> {{ cost }} </p>
+    <p> {{ amount }} </p>
+    <p> {{ price }} </p>
     <button class="button button1" @click="show">Узнать дату кликом</button> <br> 
     <button class="button button2" @mouseenter="show"> Узнать дату навестись</button> 
     <button class="button" @mouseenter="shom">Узнать день недели навестить</button>
     <button class="button" @click="shom">Узнать день недели кликов</button>
     <button @click="change">edem</button>
     <button @click="change2">asanov</button>
+    <button @click="change3">Меняем значение cost на 50</button>
 {{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
