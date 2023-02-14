@@ -37,6 +37,12 @@ alert(today);
 slozheniye: function() {
 alert(this.num1 + this.num2)
 },
+hide: function() {
+		this.visible = false;
+	},
+  hide2: function() {
+		this.visible = true;
+	},
 shom: function(){
     let date = this.dayOfWeek(this.date);
     // const dayOfWeekDigit = new Date().getDay();
@@ -81,12 +87,17 @@ let today = new Date();
     <button @click="change">edem</button>
     <button @click="change2">asanov</button>
     <button @click="change3">Меняем значение cost на 50</button>
-    <a class="inline-link-1" href="https://github.com/edemkaaa" onclick="event.preventDefault()">Не сработает по клику</a>
-    <a @click.once="shor">Сработает один раз</a>
+    <button @click="hide">Убрать абзац</button>
+	<p v-if="visible">text</p>
+    <button @click="hide2">Вернуть абзац</button>
+	  <p v-if="visible">text</p>
+    <a class="inline-link-1" href="https://github.com/edemkaaa" onclick="event.preventDefault()"> Не сработает по клику</a>
+    <a @click.once="shor"> Сработает один раз</a>
     <p v-if="visible">Показан</p>
     <p v-if="visible1">Не показан</p>
     <p v-if="hidden">Edem</p>
     <p v-if="!hidden1">Asanov</p>
+    <p v-if="visible">text</p>
 {{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
