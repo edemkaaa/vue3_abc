@@ -29,6 +29,7 @@
     vue21_1: true,
     edemkaaa: true,
     day: 'Среда',
+    age: 18,
 	}
 },
 computed: {
@@ -138,6 +139,9 @@ let today = new Date();
     <p class="hunter" v-if="day === 'Пятница'">Пятница</p>
     <p class="hunter" v-if="day === 'Суббота'">Суббота</p>
     <p class="hunter" v-if="day === 'Воскресенье'">Воскресенье</p>
+    <p v-if="age <= 18">Подросток</p>
+    <p v-else-if="19 < age && age < 25">Молодой человек</p>
+    <p v-else="age > 26">Мужчина</p>
  <img v-bind:src="attr">
  </div>
 </template>
