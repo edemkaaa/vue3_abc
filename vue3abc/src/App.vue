@@ -30,6 +30,7 @@
     edemkaaa: true,
     day: 'Среда',
     age: 18,
+    vue25: true,
 	}
 },
 computed: {
@@ -87,6 +88,9 @@ shom: function(){
   toggle1: function() {
 	this.vue21_1 = !this.vue21_1;
   },
+  hide3: function(){
+  this.vue25 = false;
+  },
 }
 }
 let today = new Date();
@@ -132,16 +136,22 @@ let today = new Date();
     <p v-if="edemkaaa">Edem Asanov</p>
     <p v-else>Asanov Edem</p>
 {{ dayOfWeekDigit }}
-    <p class="hunter" v-if="day === 'Понедельник'">Понедельник</p>
-    <p class="hunter" v-if="day === 'Вторник'">Вторник</p>
-    <p class="hunter" v-if="day === 'Среда'">Среда</p>
-    <p class="hunter" v-if="day === 'Четверг'">Четверг</p>
-    <p class="hunter" v-if="day === 'Пятница'">Пятница</p>
-    <p class="hunter" v-if="day === 'Суббота'">Суббота</p>
-    <p class="hunter" v-if="day === 'Воскресенье'">Воскресенье</p>
+    <p v-if="day === 'Понедельник'">Понедельник</p>
+    <p v-if="day === 'Вторник'">Вторник</p>
+    <p v-if="day === 'Среда'">Среда</p>
+    <p v-if="day === 'Четверг'">Четверг</p>
+    <p v-if="day === 'Пятница'">Пятница</p>
+    <p v-if="day === 'Суббота'">Суббота</p>
+    <p v-if="day === 'Воскресенье'">Воскресенье</p>
     <p v-if="age <= 18">Подросток</p>
     <p v-else-if="19 < age && age < 25">Молодой человек</p>
     <p v-else="age > 26">Мужчина</p>
+    <button class="button" @click="hide3">hide3</button>
+    <div v-if="vue25">
+    <p>+++</p>
+    <p>+++</p>
+    <p>+++</p>
+  </div>
  <img v-bind:src="attr">
  </div>
 </template>
