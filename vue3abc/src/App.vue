@@ -28,6 +28,7 @@
     vue20_3: true,
     vue21_1: true,
     edemkaaa: true,
+    day: 'Среда',
 	}
 },
 computed: {
@@ -130,6 +131,13 @@ let today = new Date();
     <p v-if="edemkaaa">Edem Asanov</p>
     <p v-else>Asanov Edem</p>
 {{ dayOfWeekDigit }}
+    <p class="hunter" v-if="day === 'Понедельник'">Понедельник</p>
+    <p class="hunter" v-if="day === 'Вторник'">Вторник</p>
+    <p class="hunter" v-if="day === 'Среда'">Среда</p>
+    <p class="hunter" v-if="day === 'Четверг'">Четверг</p>
+    <p class="hunter" v-if="day === 'Пятница'">Пятница</p>
+    <p class="hunter" v-if="day === 'Суббота'">Суббота</p>
+    <p class="hunter" v-if="day === 'Воскресенье'">Воскресенье</p>
  <img v-bind:src="attr">
  </div>
 </template>
