@@ -31,6 +31,7 @@
     day: 'Среда',
     age: 18,
     vue25: true,
+    items: [1, 2, 3, 4, 5],
 	}
 },
 computed: {
@@ -147,12 +148,18 @@ let today = new Date();
     <p v-else-if="19 < age && age < 25">Молодой человек</p>
     <p v-else="age > 26">Мужчина</p>
     <button class="button" @click="hide3">hide3</button>
-    <div v-if="vue25">
+      <div v-if="vue25">
     <p>+++</p>
     <p>+++</p>
     <p>+++</p>
-  </div>
- <img v-bind:src="attr">
+      </div>
+    <div v-for="elem in items">{{ elem }}</div>
+    <br>
+    <div v-for="elem in items">{{ elem*elem }}</div>
+    <br>
+    <ul v-for="elem in items">{{ elem }}</ul>
+
+  <img v-bind:src="attr">
  </div>
 </template>
 
