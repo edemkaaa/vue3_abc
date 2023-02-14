@@ -23,6 +23,9 @@
     visible1: false,
     hidden: true,
     hidden1: false,
+    vue20_1: true,
+    vue20_2: true,
+    vue20_3: true,
 	}
 },
 computed: {
@@ -65,6 +68,18 @@ shom: function(){
   change3: function(){
     this.cost = '50'
   },
+  toggle: function() {
+	this.visible = !this.visible;
+  },
+  toggle1: function() {
+	this.vue20_1 = !this.vue20_1;
+  },
+  toggle2: function() {
+	this.vue20_2 = !this.vue20_2;
+  },
+  toggle3: function() {
+	this.vue20_3 = !this.vue20_3;
+  },
 }
 }
 let today = new Date();
@@ -88,9 +103,15 @@ let today = new Date();
     <button @click="change2">asanov</button>
     <button @click="change3">Меняем значение cost на 50</button>
     <button @click="hide">Убрать абзац</button>
-	<p v-if="visible">text</p>
+	  <p v-if="visible">text</p>
     <button @click="hide2">Вернуть абзац</button>
 	  <p v-if="visible">text</p>
+    <button @click="toggle1">toggle1</button>
+	  <p v-if="vue20_1">абзац1</p>
+    <button @click="toggle2">toggle2</button>
+	  <p v-if="vue20_2">абзац2</p>
+    <button @click="toggle3">toggle3</button>
+	  <p v-if="vue20_3">абзац3</p>
     <a class="inline-link-1" href="https://github.com/edemkaaa" onclick="event.preventDefault()"> Не сработает по клику</a>
     <a @click.once="shor"> Сработает один раз</a>
     <p v-if="visible">Показан</p>
