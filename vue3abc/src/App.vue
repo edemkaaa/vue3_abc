@@ -34,6 +34,37 @@
     items: [1, 2, 3, 4, 5],
     arr: ['Edem', 'Asanov', 'Linurovich'],
     obj: {Edem:'100$', Asanov:'200$', Linurovich:'300$'},
+    hrefs: [
+      {
+        href: '1.html',
+        text: 'Edem Asanov',
+      },
+      {
+        href: '2.html',
+        text: 'Edem Seytumerov',
+      },
+      {
+        href: '3.html',
+        text: 'Elvin Nikolayenko,
+      },
+    ],
+    products: [
+      {
+        name: 'product1',
+        price: 100,
+        quantity: 5
+      },
+      {
+        name: 'product2',
+        price: 200,
+        quantity: 4
+      },
+      {
+        name: 'product3',
+        price: 300,
+        quantity: 3
+      },
+    ]
 	}
 },
 computed: {
@@ -187,6 +218,18 @@ let today = new Date();
     <li>{{ elem }}</li>
   </ul>
     <img v-bind:src="attr">
+    <ul>
+    <li v-for="link in hrefs"><a href="{{ link.href }}">{{ link.text }}</a></li>
+  </ul>
+  <br>
+  <br>
+  <table>
+    <tr v-for="col in products">
+      <td>{{ col.name }}</td>
+      <td>{{ col.price }}</td>
+      <td>{{ col.quantity }}</td>
+    </tr>
+  </table>
 </div>
 </template>
 
