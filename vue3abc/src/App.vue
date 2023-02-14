@@ -32,6 +32,7 @@
     age: 18,
     vue25: true,
     items: [1, 2, 3, 4, 5],
+    arr: ['Edem', 'Asanov', 'Linurovich'],
 	}
 },
 computed: {
@@ -158,7 +159,7 @@ let today = new Date();
     <div v-for="elem in items">{{ elem*elem }}</div>
     <br>
     <ul v-for="elem in items">{{ elem }}</ul>
-
+    <ul v-for="(elem, key) in arr"> {{ key }} {{ elem }}</ul>
   <img v-bind:src="attr">
  </div>
 </template>
