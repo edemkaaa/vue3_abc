@@ -27,6 +27,7 @@
     vue20_2: true,
     vue20_3: true,
     vue21_1: true,
+    edemkaaa: true,
 	}
 },
 computed: {
@@ -126,6 +127,8 @@ let today = new Date();
     <p v-if="hidden">Edem</p>
     <p v-if="!hidden1">Asanov</p>
     <p v-if="visible">text</p>
+    <p v-if="edemkaaa">Edem Asanov</p>
+    <p v-else>Asanov Edem</p>
 {{ dayOfWeekDigit }}
  <img v-bind:src="attr">
  </div>
