@@ -33,6 +33,7 @@
     vue25: true,
     items: [1, 2, 3, 4, 5],
     arr: ['Edem', 'Asanov', 'Linurovich'],
+    obj: {Edem:'100$', Asanov:'200$', Linurovich:'300$'},
 	}
 },
 computed: {
@@ -160,8 +161,26 @@ let today = new Date();
     <br>
     <ul v-for="elem in items">{{ elem }}</ul>
     <ul v-for="(elem, key) in arr"> {{ key }} {{ elem }}</ul>
-  <img v-bind:src="attr">
- </div>
+    <ul>
+    <li v-for="elem in obj">{{ elem }}</li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li v-for="(key, elem) in obj"> {{ elem }} - {{ key }}</li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index }}</li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index+1 }}</li>
+    </ul>
+    <img v-bind:src="attr">
+</div>
 </template>
 
 <style>
