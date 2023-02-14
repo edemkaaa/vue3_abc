@@ -45,7 +45,7 @@
       },
       {
         href: '3.html',
-        text: 'Elvin Nikolayenko,
+        text: 'Elvin Nikolayenko',
       },
     ],
     products: [
@@ -217,7 +217,6 @@ let today = new Date();
   <ul v-for="elem in items">
     <li>{{ elem }}</li>
   </ul>
-    <img v-bind:src="attr">
     <ul>
     <li v-for="link in hrefs"><a href="{{ link.href }}">{{ link.text }}</a></li>
   </ul>
@@ -230,6 +229,10 @@ let today = new Date();
       <td>{{ col.quantity }}</td>
     </tr>
   </table>
+  <p v-for="num in 30">
+		{{ num }}
+	</p>
+  <img v-bind:src="attr">
 </div>
 </template>
 
