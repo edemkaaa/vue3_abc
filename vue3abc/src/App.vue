@@ -26,6 +26,7 @@
     vue20_1: true,
     vue20_2: true,
     vue20_3: true,
+    vue21_1: true,
 	}
 },
 computed: {
@@ -80,6 +81,9 @@ shom: function(){
   toggle3: function() {
 	this.vue20_3 = !this.vue20_3;
   },
+  toggle1: function() {
+	this.vue21_1 = !this.vue21_1;
+  },
 }
 }
 let today = new Date();
@@ -112,6 +116,9 @@ let today = new Date();
 	  <p v-if="vue20_2">абзац2</p>
     <button @click="toggle3">toggle3</button>
 	  <p v-if="vue20_3">абзац3</p>
+    <button @click="toggle1">
+		{{ vue21_1 ? 'hide' : 'show' }}
+	  </button>
     <a class="inline-link-1" href="https://github.com/edemkaaa" onclick="event.preventDefault()"> Не сработает по клику</a>
     <a @click.once="shor"> Сработает один раз</a>
     <p v-if="visible">Показан</p>
