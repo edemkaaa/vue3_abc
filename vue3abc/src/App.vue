@@ -179,6 +179,13 @@ let today = new Date();
     <ul>
       <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index+1 }}</li>
     </ul>
+    <div v-for="elem in items">
+  <p >{{ elem }}</p>
+  </div>
+  <br>
+  <ul v-for="elem in items">
+    <li>{{ elem }}</li>
+  </ul>
     <img v-bind:src="attr">
 </div>
 </template>
