@@ -24,11 +24,9 @@ setTwo: function(){
 
 <template>
   <ul>
-<button class="selected" @click="toggle">toggle</button>
-<p class="button" v-if="visible">Edem</p>
-<p :class="styles">Conclave</p>
-<button class="button" @click="setone">visible</button>
-<button class="button" @click="setTwo">hide</button>
+    <p :class="{active: true, valid: false}">
+		text
+	</p>
   </ul>
 </template>
 
@@ -59,5 +57,11 @@ cursor: pointer;
   display: block;
   direction: rtl;
   border: 1ex;
+}
+.active{
+  color: #000;
+  background-color: aliceblue;
+  margin: auto;
+  stroke: #000;
 }
   </style>
