@@ -2,22 +2,33 @@
   export default{
     data() {
 	return {
-		obj: {
-			done: true,
-			selected:  false,
+    visible: true,
+		style: {
+			hidden: true,
 		},
-}
+	}
 },
 methods: {
-
-}
+setone:function(){
+  this.styles.hidden = false;
+},
+setTwo: function(){
+  this.styles.hidden = true;
+},
+  toggle: function () {
+    this.visible = !this.visible;
   }
+}
+}
 </script>
 
 <template>
   <ul>
-    <p :class="selected">Тест</p>
-    <p :class="obj">text</p>
+<button class="selected" @click="toggle">toggle</button>
+<p class="button" v-if="visible">Edem</p>
+<p :class="styles">Conclave</p>
+<button class="button" @click="setone">visible</button>
+<button class="button" @click="setTwo">hide</button>
   </ul>
 </template>
 
@@ -28,11 +39,9 @@ color: #fffc41;
 display: flex;
 text-align: center;
 }
-p {
-  font-size: large;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: rgb(104, 62, 62);
-  }
+p.hidden{
+  display: none;
+}
   .button {
 background-color: #fffc41; /* yellow */
 border: none;
@@ -44,5 +53,11 @@ display: inline-block;
 font-size: 16px;
 margin: 4px 2px;
 cursor: pointer;
+}
+.styles{
+  color: aquamarine;
+  display: block;
+  direction: rtl;
+  border: 1ex;
 }
   </style>
