@@ -2,21 +2,30 @@
 export default{
 data(){
   return{
-  text1: ' ',
-  text2: ' '
+    newItem: '',
+		items: ['a', 'b', 'c', 'd', 'e'],
   }
 },
 methods: {
+  addItem: function() {
+		this.items.push(this.newItem);
+	},
+  addItem1: function () {
+    this.items.unshift(this.newItem);
+  }
 }
 }
 </script>
 
 <template>
-<input class="text-field__input" v-model="text1" v-on:keyup.enter="submit">
-<p>{{ text1 }}</p>
-<br>
-<a href="#" class="inline-link-1" v-on:keyup.ctrl="sub">text2</a>
-<p ></p>
+<ul>		
+    <li v-for="(item, index) in items" :key="index">
+			{{ item }}
+		</li>
+    <input v-model="newItem">
+	<button @click="addItem">В конец</button>
+	<button @click="addItem1">В начало</button>
+</ul>
 </template>
 
 <style scoped>
