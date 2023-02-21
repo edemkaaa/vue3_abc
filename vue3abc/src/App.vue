@@ -1,24 +1,41 @@
 <script>
   export default{
     data() {
-	return {
-    message: '',
-    number: '',
+      return {
+		num: 0,
+		res: 0,
+    sum: 0,
+    number1: 0,
+    number2: 0,
+    text1:'',
+    text2:'',
+    text:'',
 	}
 },
 methods: {
-
+	calc: function() {
+		this.res = this.num ** 2;
+	},
+  summary: function() {
+  this.sum = this.number1 + this.number2;
+  }
 }
 }
 </script>
 
 <template>
   <ul>
-    <input v-model="message">
-  <p>{{ message }}</p>
-<br>
-    <input v-model="number">
-  <p>{{ number*number }}</p>
+    <p>{{ res }}</p>
+	<input v-model="num">
+	<button v-on:click="calc">work</button>
+  <p>{{ sum }}</p>
+	<input v-model="number1">
+  <input v-model="number2">
+	<button v-on:click="summary">sum</button>
+  <p> {{ text }}</p>
+  <input v-model="text1">
+  <input v-model="text2">
+  <button v-on:click="">text</button>
   </ul>
 </template>
 
