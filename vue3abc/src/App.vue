@@ -2,6 +2,8 @@
   export default{
     data() {
 	return {
+    message: '',
+    number: '',
 	}
 },
 methods: {
@@ -12,9 +14,11 @@ methods: {
 
 <template>
   <ul>
-    <p :style="{color: 'green', fontSize: '30px', backgroundColor: 'yellow', fontStyle: 'italic', fontWeight: 'bold'}">
-		text
-	</p>
+    <input v-model="message">
+  <p>{{ message }}</p>
+<br>
+    <input v-model="number">
+  <p>{{ number*number }}</p>
   </ul>
 </template>
 
