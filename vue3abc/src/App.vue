@@ -2,7 +2,7 @@
   export default{
     data() {
       return {
-        lang: [],
+        language: '',
 	}
 },
 methods: {
@@ -13,15 +13,17 @@ methods: {
 
 <template>
 <ul>
-	<input type="checkbox" v-model="lang" value="python">
-  <label>python</label>
-	<input type="checkbox" v-model="lang" value="jango">
-  <label>jango</label>
-	<input type="checkbox" v-model="lang" value="c++">
-  <label>c++</label>
-  <ul>
-  <li v-for="elem in lang">{{ elem }}</li>
-</ul>
+  <p>Какой язык ваш родной?</p>
+<input name="radio" type="radio" v-model="language" value="русский" @click="one">
+<label for="">русский</label>
+<br>
+<input name="radio" type="radio" v-model="language" value="английский" @click="two">
+<label for="">английский</label>
+<br>
+<input name="radio" type="radio" v-model="language" value="татарский" @click="three">
+<label for="">татарский</label>
+<br>
+  Вы выбрали: {{ language }}
 </ul>
 </template>
 
