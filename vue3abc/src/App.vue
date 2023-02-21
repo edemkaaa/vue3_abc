@@ -2,7 +2,7 @@
   export default{
     data() {
       return {
-        language: '',
+		selected: 'value1', // значение по умолчанию
 	}
 },
 methods: {
@@ -13,17 +13,13 @@ methods: {
 
 <template>
 <ul>
-  <p>Какой язык ваш родной?</p>
-<input name="radio" type="radio" v-model="language" value="русский" @click="one">
-<label for="">русский</label>
-<br>
-<input name="radio" type="radio" v-model="language" value="английский" @click="two">
-<label for="">английский</label>
-<br>
-<input name="radio" type="radio" v-model="language" value="татарский" @click="three">
-<label for="">татарский</label>
-<br>
-  Вы выбрали: {{ language }}
+  <p>В каком городе вы живете?</p>
+	<select v-model="selected">
+		<option>Симферополь</option>
+		<option>Евпатория</option>
+		<option>Феодосия</option>
+	</select>
+	<p>{{ selected }}</p>
 </ul>
 </template>
 
