@@ -1,28 +1,22 @@
 <script>
-  export default{
-    data() {
-      return {
-        isDisabled: true,
-        isDisabled1: true,
-	}
+export default{
+data(){
+  return{
+  text1: ' ',
+  text2: ' '
+  }
 },
 methods: {
-  toggle: function () {
-    this.isDisabled = false;
-  },
-  toggle1: function () {
-    this.isDisabled1 = false;
-  },
 }
 }
 </script>
 
 <template>
-<ul>
-	<button v-bind:disabled="isDisabled">btn</button>
-	<button v-bind:disabled="isDisabled">btn</button>
-  <button class="button" @click="toggle">btn</button>
-</ul>
+<input class="text-field__input" v-model="text1" v-on:keyup.enter="submit">
+<p>{{ text1 }}</p>
+<br>
+<a href="#" class="inline-link-1" v-on:keyup.ctrl="sub">text2</a>
+<p ></p>
 </template>
 
 <style scoped>
