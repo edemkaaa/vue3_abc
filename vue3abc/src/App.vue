@@ -1,7 +1,9 @@
 <script>
   export default{
   data() {
-
+    return {
+		str: 'active valid',
+	}
 },
 methods: {
 
@@ -11,7 +13,7 @@ methods: {
 
 <template>
   <ul>
-<p>Пример</p>
+    <p :class="str">text</p>
   </ul>
 </template>
 
