@@ -2,22 +2,25 @@
   export default{
     data() {
       return {
-        text: '',
+        checked: true,
+        visible: true,
 	}
 },
 methods: {
-  list: function(){
-}
+  toggle: function () {
+    this.checked = false;
+    this.visible = !this.visible;
+  },
 }
 }
 </script>
 
 <template>
-    <textarea v-model="text"></textarea>
-	<p>{{ text }}</p>
-  <button @click="list">list</button>
 <ul>
-  <li v-for="text in texts">{{ text }}</li>
+	<input type="checkbox" v-model="checked">
+  <p>{{ checked ? 'yes' : 'no' }}</p>
+  <button class="button" @click="toggle">toggle</button>
+<p class="selected" v-if="visible">{{ checked ? 'Yes' : 'No' }}</p>
 </ul>
 </template>
 
