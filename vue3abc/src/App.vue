@@ -2,41 +2,23 @@
   export default{
     data() {
       return {
-		num: 0,
-		res: 0,
-    sum: 0,
-    number1: 0,
-    number2: 0,
-    text1:'',
-    text2:'',
-    text:'',
+        text: '',
 	}
 },
 methods: {
-	calc: function() {
-		this.res = this.num ** 2;
-	},
-  summary: function() {
-  this.sum = this.number1 + this.number2;
-  }
+  list: function(){
+}
 }
 }
 </script>
 
 <template>
-  <ul>
-    <p>{{ res }}</p>
-	<input v-model="num">
-	<button v-on:click="calc">work</button>
-  <p>{{ sum }}</p>
-	<input v-model="number1">
-  <input v-model="number2">
-	<button v-on:click="summary">sum</button>
-  <p> {{ text }}</p>
-  <input v-model="text1">
-  <input v-model="text2">
-  <button v-on:click="">text</button>
-  </ul>
+    <textarea v-model="text"></textarea>
+	<p>{{ text }}</p>
+  <button @click="list">list</button>
+<ul>
+  <li v-for="text in texts">{{ text }}</li>
+</ul>
 </template>
 
 <style scoped>
