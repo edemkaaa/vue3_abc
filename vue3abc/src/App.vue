@@ -1,9 +1,12 @@
 <script>
   export default{
-  data() {
-    return {
-		str: 'active valid',
-	}
+    data() {
+	return {
+		obj: {
+			done: true,
+			selected:  false,
+		},
+}
 },
 methods: {
 
@@ -13,11 +16,18 @@ methods: {
 
 <template>
   <ul>
-    <p :class="str">text</p>
+    <p :class="selected">Тест</p>
+    <p :class="obj">text</p>
   </ul>
 </template>
 
-<style>
+<style scoped>
+.selected{
+padding: 15px;
+color: #fffc41;
+display: flex;
+text-align: center;
+}
 p {
   font-size: large;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
