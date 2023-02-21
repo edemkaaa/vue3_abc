@@ -1,33 +1,44 @@
 <script>
-  export default {
+  export default{
   data() {
 	return {
-		products: [
-			{
-				id: 1,
-				name: 'product1',
-			},
-			{
-				id: 2,
-				name: 'product2',
-			},
-			{
-				id: 3,
-				name: 'product3',
-			},
-		]
+		arr: ['a', 'b', 'c'],
 	}
 },
 methods: {
+	add: function() {
+		this.arr.push('xxx');
+	},
+  del: function() {
+		this.arr.shift();
+	},
+  del1: function() {
+		this.arr.pop();
+	},
+  splice: function(){
+    this.arr.splice();
+  },
+  sort: function(){
+    this.arr.sort();
+  },
+  reverse: function () {
+    this.arr.reverse();
+  },
 }
-}
+  }
 </script>
 
 <template>
   <ul>
-    <p v-for="product in products" :key="products.id">
-		{{ product.name }}
+    <p v-for="elem in arr">
+		{{ elem }}
 	</p>
+	<button @click="add">добавить</button>
+  <button @click="del">удалить первую строку</button>
+  <button @click="del1">удалить последнюю строку</button>
+  <button @click="splice">удалить предпоследнюю строку</button>
+  <button @click="sort">сортировать в обычном</button>
+  <button @click="reverse">сортировать в обратном</button>
   </ul>
 </template>
 
