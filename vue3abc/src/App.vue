@@ -2,29 +2,17 @@
   export default{
     data() {
 	return {
-    visible: true,
-		style: {
-			hidden: true,
-		},
 	}
 },
 methods: {
-setone:function(){
-  this.styles.hidden = false;
-},
-setTwo: function(){
-  this.styles.hidden = true;
-},
-  toggle: function () {
-    this.visible = !this.visible;
-  }
+
 }
 }
 </script>
 
 <template>
   <ul>
-    <p :class="{active: true, valid: false}">
+    <p :style="{color: 'green', fontSize: '30px', backgroundColor: 'yellow', fontStyle: 'italic', fontWeight: 'bold'}">
 		text
 	</p>
   </ul>
