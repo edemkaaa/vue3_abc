@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-<Hunter name="Edem" surn="Asanov" age="18"/>
+<Hunter :name="['Edem', 'Elvin', 'Ilya', 'Osman', 'Gleb', 'Vova']"/>
 </template>
 
 <style scoped>
