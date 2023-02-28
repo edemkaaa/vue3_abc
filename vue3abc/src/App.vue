@@ -3,36 +3,22 @@ import User from './components/Employee.vue'
 export default {
   data() {
     return {
-      hunters: [
-        {
-          id: 1,
-          name: 'Alec',
-          salary: 1000,
-          age: 19
-        },
-        {
-          id: 2,
-          name: 'Jace',
-          salary: 1000,
-          age: 18
-        },
-        {
-          id: 3,
-          name: 'Magnus',
-          salary: 3000,
-          age: 25
-        },
-      ],
+      
     }
   },
   components: {
     User
+  },
+  methods: {
+    fontany() {
+      alert('Edem, Osman, Vova, Elvin');
+    }
   }
 }
 </script>
 
 <template>
-<User :name="name" :salary="salary" :age="age"/>
+<User @show="fontany" @show1="herondale" />
 </template>
 
 <style scoped>
