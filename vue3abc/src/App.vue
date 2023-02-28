@@ -2,13 +2,33 @@
 export default{
 data(){
   return{
-    newItem: '',
-		items: ['a', 'b', 'c', 'd', 'e'],
+		users: [
+    {
+				id: 1,
+				name: 'edem',
+				salary: 100,
+				age: 18,
+			},
+			{
+				id: 2,
+				name: 'elvin',
+				salary: 200,
+				age: 17,
+			},
+			{
+				id: 3,
+				name: 'ilya',
+				salary: 300,
+				age: 19,
+			},
+		]
   }
 },
 methods: {
-	removeItem: function(index) {
-		this.items.splice(index, 1);
+	removeItem: function(id) {
+		this.users = this.users.filter((user) => {
+			return user.id !== id;
+		})
 	}
 }
 }
@@ -16,9 +36,9 @@ methods: {
 
 <template>
 	<ul>
-		<li v-for="(item, index) in items" :key="index">
-			{{ item }}
-			<button @click="removeItem(index)">remove</button>
+		<li v-for="user in users" :key="user.id">
+			{{ user.name }} {{ user.salary }} {{ user.age }} 
+      <button class="button" @click="removeUser(user.id)">remove</button>
 		</li>
 	</ul>
 </template>
