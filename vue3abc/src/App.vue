@@ -7,25 +7,20 @@ data(){
   }
 },
 methods: {
-  addItem: function() {
-		this.items.push(this.newItem);
-	},
-  addItem1: function () {
-    this.items.unshift(this.newItem);
-  }
+	removeItem: function(index) {
+		this.items.splice(index, 1);
+	}
 }
 }
 </script>
 
 <template>
-<ul>		
-    <li v-for="(item, index) in items" :key="index">
+	<ul>
+		<li v-for="(item, index) in items" :key="index">
 			{{ item }}
+			<button @click="removeItem(index)">remove</button>
 		</li>
-    <input v-model="newItem">
-	<button @click="addItem">В конец</button>
-	<button @click="addItem1">В начало</button>
-</ul>
+	</ul>
 </template>
 
 <style scoped>
