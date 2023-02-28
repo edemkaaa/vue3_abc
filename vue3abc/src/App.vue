@@ -6,41 +6,42 @@ data(){
     {
 				id: 1,
 				name: 'edem',
-				salary: 100,
+				salary: 50000,
 				age: 18,
 			},
 			{
 				id: 2,
 				name: 'elvin',
-				salary: 200,
+				salary: 12000,
 				age: 17,
 			},
 			{
 				id: 3,
 				name: 'ilya',
-				salary: 300,
+				salary: 4300,
 				age: 19,
 			},
 		]
   }
 },
 methods: {
-	removeItem: function(id) {
-		this.users = this.users.filter((user) => {
-			return user.id !== id;
-		})
-	}
+  edit(user) {
+    user.isEdit = true;
+  },
+  save(user) {
+    user.isEdit = false;
+  },
 }
 }
 </script>
 
-<template>
-	<ul>
-		<li v-for="user in users" :key="user.id">
-			{{ user.name }} {{ user.salary }} {{ user.age }} 
-      <button class="button" @click="removeUser(user.id)">remove</button>
-		</li>
-	</ul>
+</template>
+<template v-else>
+  <input v-model="user.name">
+  <input v-model="user.salary">
+  <input v-model="user.age">
+  <button class="button" @click="save(user)"> save
+  </button>
 </template>
 
 <style scoped>
