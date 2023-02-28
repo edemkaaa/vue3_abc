@@ -1,20 +1,23 @@
 <script>
-export default{
-data(){
-  return{
-		
+import User from './components/Employee.vue'
+export default {
+  components: {
+    User
   }
-},
-methods: {
-  
-}
 }
 </script>
 
 <template>
+<Hunter name="Edem" surn="Asanov" age="18"/>
 </template>
 
 <style scoped>
+.employee{
+padding: 60px;
+color: #a200ff;
+display: flex;
+text-align: left;
+}
 .selected{
 padding: 15px;
 color: #fffc41;
