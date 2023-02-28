@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-   <p class="hunter">{{ name }}</p>
-   <p class="hunter">{{ surn }}</p>
-   <p class="hunter">{{ age }}</p>
-</template>
+    <p>{{ name }}</p>
+    <p>{{ surn }}</p>
+    <p>{{ age }}</p>
+ </template>
