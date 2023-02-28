@@ -6,21 +6,21 @@ export default {
       hunters: [
         {
           id: 1,
-          name: 'Alec',
-          salary: 1000,
-          age: 19
-        },
-        {
-          id: 2,
-          name: 'Jace',
-          salary: 1000,
+          name: 'Edem',
+          salary: 23000,
           age: 18
         },
         {
+          id: 2,
+          name: 'Elvin',
+          salary: 13000,
+          age: 17
+        },
+        {
           id: 3,
-          name: 'Magnus',
-          salary: 3000,
-          age: 25
+          name: 'Osman',
+          salary: 64000,
+          age: 19
         },
       ],
     }
