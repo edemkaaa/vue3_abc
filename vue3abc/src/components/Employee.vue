@@ -1,10 +1,14 @@
 <script>
 export default {
-    props: ['name', 'salary', 'age'],
-    data() {
-        return {
-        }
-    }
+	props: {
+		name: String,
+		surn: String
+	},
+	data() {
+		return {
+			
+		}
+	}
 }
 </script>
 
