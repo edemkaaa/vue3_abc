@@ -2,46 +2,16 @@
 export default{
 data(){
   return{
-		users: [
-    {
-				id: 1,
-				name: 'edem',
-				salary: 50000,
-				age: 18,
-			},
-			{
-				id: 2,
-				name: 'elvin',
-				salary: 12000,
-				age: 17,
-			},
-			{
-				id: 3,
-				name: 'ilya',
-				salary: 4300,
-				age: 19,
-			},
-		]
+		
   }
 },
 methods: {
-  edit(user) {
-    user.isEdit = true;
-  },
-  save(user) {
-    user.isEdit = false;
-  },
+  
 }
 }
 </script>
 
-</template>
-<template v-else>
-  <input v-model="user.name">
-  <input v-model="user.salary">
-  <input v-model="user.age">
-  <button class="button" @click="save(user)"> save
-  </button>
+<template>
 </template>
 
 <style scoped>
