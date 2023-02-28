@@ -1,21 +1,22 @@
 <script>
 export default {
-	props: {
-		name: String,
-		surn: String
-	},
-	data() {
-		return {
-			
-		}
-	}
+    emits: ['show', 'show1'],
+    data() {
+        return {
+        }
+    },
+    methods: {
+        handleName() {
+            this.$emit('show', 'Edem');
+        },
+        handleSalary(){
+            this.$emit('show1', 'Elvin', '1200000');
+        }
+    }
 }
 </script>
 
 <template>
-<p class="emlpoyee">{{ name }} 
-<br>
-{{ salary }} 
-<br>
-{{ age }}</p>
+<button class="button" @click="handleName">Name</button>
+<button class="button" @click="handleSalary">Salary</button>
 </template>

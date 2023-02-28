@@ -3,36 +3,25 @@ import User from './components/Employee.vue'
 export default {
   data() {
     return {
-      hunters: [
-        {
-          id: 1,
-          name: 'Edem',
-          salary: 23000,
-          age: 18
-        },
-        {
-          id: 2,
-          name: 'Elvin',
-          salary: 13000,
-          age: 17
-        },
-        {
-          id: 3,
-          name: 'Osman',
-          salary: 64000,
-          age: 19
-        },
-      ],
+      
     }
   },
   components: {
     User
+  },
+  methods: {
+    userName(name) {
+      console.log(name);
+    },
+    userSalary(name, salary){
+console.log(name, salary);
+    }
   }
 }
 </script>
 
 <template>
-<User :name="name" :salary="salary" :age="age"/>
+<User @show="userName" @show1="userSalary"/>
 </template>
 
 <style scoped>
