@@ -1,5 +1,6 @@
 <script>
 import User from './components/Employee.vue'
+import userform from './components/userform.vue'
 export default {
   data() {
     return {
@@ -23,16 +24,13 @@ export default {
     }
   },
   components: {
-    User
+    User, userform
   },
   methods: {
-    change(id, name, surn){
-      this.users = this.users.map((user) => {
-        if(user.id === id){
-          user.name = name;
-          user.surn = surn;
-        }
-        return user;
+    add(name, surn){
+      let id = this.users.length + 1;
+      this.users.push({
+        id, name, surn
       });
     }
   }
@@ -40,10 +38,30 @@ export default {
 </script>
 
 <template>
-<User v-for   ="user in users"
-		:id     ="user.id"
-		:name   ="user.name"
-		:surn   ="user.surn"
-		:key    ="user.id"
-    @change="change"/>
+<userform @add="add"/>
 </template>
+
+<style scoped>
+header {
+  line-height: 1.5;
+}
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+@media (min-width: 1024px) {
+  .header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+</style>

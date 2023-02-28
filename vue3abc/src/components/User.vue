@@ -2,10 +2,11 @@
 export default {
     props: ['name', 'surn', 'age'],
     data() {
-        return {
-            
-        }
-    }
+	return {
+		newName: '',
+		newSurn: '',
+	}
+}
 }
 </script>
 
